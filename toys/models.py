@@ -9,7 +9,7 @@ class Toy(models.Model):
     description = models.CharField(max_length=250, blank=True, default='')
     toy_category = models.CharField(max_length=200, blank=False, default='')
     release_date = models.DateTimeField()
-    was_include_in_home = models.BooleanField(default=False)
+    was_included_in_home = models.BooleanField(default=False)
 
     class Meta:
         ordering = ('name', )
