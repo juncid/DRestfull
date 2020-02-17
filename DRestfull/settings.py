@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'toys.apps.ToysConfig'
+    'toys.apps.ToysConfig',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
