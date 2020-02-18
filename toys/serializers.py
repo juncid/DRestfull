@@ -6,6 +6,7 @@ class ToySerializer(serializers.Serializer):
     pk = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=160)
     description = serializers.CharField(max_length=250)
+    toy_category = serializers.CharField(max_length=250)
     release_date = serializers.DateTimeField()
     was_included_in_home = serializers.BooleanField(required=False)
 
