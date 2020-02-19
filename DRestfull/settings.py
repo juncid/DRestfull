@@ -80,8 +80,18 @@ WSGI_APPLICATION = 'DRestfull.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        # Replace drones with your desired database name
+        'NAME': 'drones',
+        # Replace username with your desired user name
+        'USER': 'userdrone',
+        # Replace password with your desired password
+        'PASSWORD': 'rootdrones',
+        # Replace 127.0.0.1 with the PostgreSQL host
+        'HOST': '127.0.0.1',
+        # Replace 5432 with the PostgreSQL configured port
+        # in case you aren't using the default port
+        'PORT': '5432',
     }
 }
 
