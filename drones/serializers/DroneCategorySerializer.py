@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
-from .models import DroneCategory, Drone, Pilot, Competition
-import drones.views
+from ..models import DroneCategory
 
 
 class DroneCategorySerializer(serializers.HyperlinkedModelSerializer):
@@ -19,6 +18,3 @@ class DroneCategorySerializer(serializers.HyperlinkedModelSerializer):
             'name',
             'drones'
         ]
-
-class DroneSerializer(serializers.HyperlinkedModelSerializer):
-    drone_category = serializers.SlugRelatedField()
