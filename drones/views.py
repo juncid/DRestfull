@@ -67,6 +67,6 @@ class ApiRoot(generics.GenericAPIView):
                 request=request
             ),
             'drones': reverse(DroneList.name, request=request),
-            'pilots': reverse(PilotList, request=request),
+            'pilots': reverse(PilotList.name, request=request),
             'competitions': reverse(CompetitionList.name, request=request)
         })
