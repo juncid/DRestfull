@@ -19,4 +19,3 @@ class DroneSerializer(serializers.HyperlinkedModelSerializer):
             'has_it_competed',
             'inserted_timestamp'
         )
-

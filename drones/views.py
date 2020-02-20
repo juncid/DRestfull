@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -61,7 +59,7 @@ class CompetitionDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class ApiRoot(generics.GenericAPIView):
     name = 'api-root'
-    
+
     def get(self, request, *args, **kwargs):
         return Response({
             'drone-categories': reverse(
