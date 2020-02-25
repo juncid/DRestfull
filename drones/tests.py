@@ -41,3 +41,23 @@ class DroneCategoryTests(APITestCase):
         print(response2)
         assert response2.status_code == status.HTTP_400_BAD_REQUEST
 
+    def test_filter_drone_category_by_name(self):
+        """
+        Ensure we can filter a drone category by name
+        """
+        drone_category_name1 = 'Hexacopter'
+        self.post_drone_category(drone_category_name1)
+        drone_category_name2 = 'Octocopter'
+        self.post_drone_category(drone_category_name2)
+        filter_by_name = {'name': drone_category_name1}
+        url = '{0}?{1}'.format(
+            reverse(views.DroneCategoryList.name),
+            urlencode(filter_by_name)
+        )
+        print(url)
+        response = self.client.get(url, format='json')
+        print(response)
+        assert response.status_code == status.HTTP_200_OK
+        # Make sure we receive only one element in the response
+        assert response.data['count'] == 1
+        assert response.data['results'][0]['name'] == drone_category_name1
