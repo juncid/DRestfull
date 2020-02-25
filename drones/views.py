@@ -80,17 +80,11 @@ class PilotList(generics.ListCreateAPIView):
         'name',
         'races_count'
     )
-    """
     authentication_classes = (
         TokenAuthentication,
     )
     permission_classes = (
         IsAuthenticated,
-    )
-    """
-    permission_classes = (
-        permissions.IsAuthenticatedOrReadOnly,
-        custompermission.IsCurrentUserOwnerOrReadOnly,
     )
 
 
@@ -98,17 +92,12 @@ class PilotDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Pilot.objects.all()
     serializer_class = PilotSerializer
     name = 'pilot-detail'
-    """
-        authentication_classes = (
+
+    authentication_classes = (
             TokenAuthentication,
-        )
-        permission_classes = (
-            IsAuthenticated,
-        )
-        """
+    )
     permission_classes = (
-        permissions.IsAuthenticatedOrReadOnly,
-        custompermission.IsCurrentUserOwnerOrReadOnly,
+            IsAuthenticated,
     )
 
 
