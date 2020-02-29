@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'toys.apps.ToysConfig',
     'drones.apps.DronesConfig',
-    'django_extensions',
     'django_filters',
     'rest_framework.authtoken',
 ]
